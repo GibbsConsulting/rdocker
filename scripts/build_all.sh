@@ -2,17 +2,20 @@
 #
 # Build all docker images
 #
-for i in "pipeline"; do
-  cd $i
-  docker build -t $i .
-  cd ..
+source scripts/env_vars.sh
+
+for i in `find -name Dockerfile | gawk -F/ '{print $2}'`; do
+    cd $i
+    if test -f "makefile"; then
+        make
+    fi
+    docker build -t ${DOCKER_USER}/$i -t ${DOCKER_USER}/$i:${BUILD_VERSION} .
+    cd ..
 done
 
 #
-# Once built, use docker tag to tag the image
-# and then docker push to upload it
+# Once built, use docker push to upload it
 #
 # eg:
-# docker tag HashGoesHere delsim/pipeline:0.0.0
 # docker push delsim/pipeline
 #
