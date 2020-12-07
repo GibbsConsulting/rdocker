@@ -26,3 +26,19 @@ RUN R -e "install.packages(c('fastmap'), repos='http://cran.rstudio.com', destdi
 
 RUN R -e "install.packages(c('shiny', 'shinyWidgets', 'shinyBS', 'shinydashboard', 'shinyjs' ), destdir='${RPACKLOC}')"
 RUN R -e "install.packages(c('rpivotTable', 'plotly', 'dygraphs', 'keyring', 'uuid', 'openxlsx', 'configr', 'dygraphs' ), destdir='${RPACKLOC}')"
+
+RUN R -e "install.packages(c('DT', 'janitor', 'snakecase' ), destdir='${RPACKLOC}')"
+RUN R -e "install.packages(c('gtools', 'R6', 'DBI', 'digest', 'getPass', 'httr', 'readxl', 'sodium', 'stringr', 'uuid'), destdir='${RPACKLOC}')"
+RUN R -e "install.packages(c('plumber' ), destdir='${RPACKLOC}')"
+
+RUN R -e "install.packages(c('askpass', 'assertthat', 'base64enc', 'BH', 'bitops', 'brew', 'callr', 'cellranger', 'clipr', 'commonmark', 'covr', 'crayon', 'crosstalk', 'curl'), destdir='${RPACKLOC}')"
+RUN R -e "install.packages(c('desc', 'devtools', 'ellipsis', 'evaluate', 'fansi', 'farver', 'fileloc', 'formatR', 'futile.options', 'gtable'), destdir='${RPACKLOC}')"
+RUN R -e "install.packages(c('hexbin', 'highr', 'hms', 'htmltools', 'htmlwidgets', 'httpuv', 'ini' ), destdir='${RPACKLOC}')"
+RUN R -e "install.packages(c('knitr', 'labeling', 'lambda.r', 'later', 'lazyeval', 'lifecycle', 'markdown', 'memoise', 'mime', 'munsell', 'openxlsx' ), destdir='${RPACKLOC}')"
+RUN R -e "install.packages(c('pkgbuild', 'pkgconfig', 'pkgload', 'praise', 'prettyunits', 'progress', 'promises', 'ps', 'purrr', 'rappdirs', 'rcmdcheck' ), destdir='${RPACKLOC}')"
+RUN R -e "install.packages(c('RColorBrewer', 'Rcpp', 'rematch', 'rematch2', 'remotes', 'reshape2', 'rJava', 'roxygen2', 'rpivotTable', 'rversions' ), destdir='${RPACKLOC}')"
+RUN R -e "install.packages(c('scales', 'sessioninfo', 'sourcetools', 'stringi', 'stringr', 'tidyr', 'tidyselect', 'usethis', 'utf8'), destdir='${RPACKLOC}')"
+RUN R -e "install.packages(c('viridisLite', 'whisker', 'withr', 'xlsxjars', 'xml2', 'xopen', 'xtable', 'xts', 'yaml', 'zip' ), destdir='${RPACKLOC}')"
+
+#RUN R -e "install.packages(c('' ), destdir='${RPACKLOC}')"
+
