@@ -4,6 +4,8 @@
 #
 source scripts/env_vars.sh
 
+./scripts/fetch_packages.sh
+
 for i in `find -name Dockerfile | gawk -F/ '{print $2}'`; do
     cd $i
     if test -f "makefile"; then
