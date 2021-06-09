@@ -49,6 +49,7 @@ RUN R -e "tinytex::install_tinytex()"
 RUN R -e "install.packages(c('bslib', 'MASS', 'Matrix', 'RcppTOML', 'cachem', 'cli', 'colorspace', 'cpp11', 'fs', 'generics', 'glue', 'isoband' ), destdir='${RPACKLOC}')"
 RUN R -e "install.packages(c('jquerylib', 'lattice', 'magrittr', 'mgcv', 'nlme', 'openssl', 'pillar', 'plyr', 'rlang', 'rstudioapi', 'sass' ), destdir='${RPACKLOC}')"
 RUN R -e "install.packages(c('sys', 'tibble', 'vctrs' ), destdir='${RPACKLOC}')"
+RUN R -e "install.packages(c('forcats', 'suncalc', 'ggimage', 'gggibbous', 'calendR' ), destdir='${RPACKLOC}')"
 
 #RUN R -e "install.packages(c('' ), destdir='${RPACKLOC}')"
 

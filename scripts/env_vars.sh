@@ -4,7 +4,8 @@
 #
 
 DOCKER_USER=delsim
-BUILD_VERSION=0.4.7
+BUILD_VERSION=0.4.16
+
 
 
 
