@@ -9,9 +9,6 @@ ARG PY_VAR=3.8.6
 RUN wget https://www.python.org/ftp/python/${PY_VAR}/Python-${PY_VAR}.tgz && tar -xvf Python-${PY_VAR}.tgz && cd Python-${PY_VAR} && ./configure && make && make install && rm -rf /var/lib/apt/lists/*
 #RUN wget https://www.python.org/ftp/python/${PY_VAR}/Python-${PY_VAR}.tgz && tar -xvf Python-${PY_VAR}.tgz && cd Python-${PY_VAR} && ./configure --enable-shared && make && make install
 
-#RUN apt-get update && apt-get install -y python3 python3-dev
-#RUN cd Python-${PY_VAR} && make test
-
 RUN python3 -m pip install --upgrade pip setuptools wheel
 
 ARG RPACKLOC=/packages
@@ -41,7 +38,7 @@ RUN R -e "install.packages(c('scales', 'sessioninfo', 'sourcetools', 'stringi', 
 RUN R -e "install.packages(c('viridisLite', 'whisker', 'withr', 'xlsxjars', 'xml2', 'xopen', 'xtable', 'xts', 'yaml', 'zip' ), destdir='${RPACKLOC}')"
 
 RUN apt-get update && apt-get install -y libsecret-1-dev && rm -rf /var/lib/apt/lists/*
-RUN apt-get update && apt-get install -y texlive-fonts-recommended
+RUN apt-get update && apt-get install -y texlive-fonts-recommended && rm -rf /var/lib/apt/lists/*
 
 RUN R -e "install.packages(c('tinytex' ), destdir='${RPACKLOC}')"
 RUN R -e "tinytex::install_tinytex()"
@@ -50,6 +47,8 @@ RUN R -e "install.packages(c('bslib', 'MASS', 'Matrix', 'RcppTOML', 'cachem', 'c
 RUN R -e "install.packages(c('jquerylib', 'lattice', 'magrittr', 'mgcv', 'nlme', 'openssl', 'pillar', 'plyr', 'rlang', 'rstudioapi', 'sass' ), destdir='${RPACKLOC}')"
 RUN R -e "install.packages(c('sys', 'tibble', 'vctrs' ), destdir='${RPACKLOC}')"
 RUN R -e "install.packages(c('forcats', 'suncalc', 'ggimage', 'gggibbous', 'calendR' ), destdir='${RPACKLOC}')"
+
+RUN apt-get update && apt-get install -y gettext-base && rm -rf /var/lib/apt/lists/*
 
 #RUN R -e "install.packages(c('' ), destdir='${RPACKLOC}')"
 
