@@ -12,6 +12,8 @@ for pack in Rcpp_1.0.6 stringi_1.5.3 shinyBS_0.61 httpuv_1.5.5 RcppTOML_0.1.7 mo
         rpack=`echo $pack | gawk -F_ '{print $1}'`
         wget https://cran.r-project.org/src/contrib/Archive/${rpack}/${pack}.tar.gz
         wget https://cran.rstudio.com/src/contrib/${pack}.tar.gz
+        mkdir -p Archive/${rpack}
+        cp ${pack}.tar.gz Archive/${rpack}
     fi
 done
 
