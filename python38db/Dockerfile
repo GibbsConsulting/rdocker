@@ -6,7 +6,8 @@ RUN pip install -U pip
 
 WORKDIR /usr/src/app
 
-COPY requirements.txt .
+COPY base_requirements.txt .
 
-RUN pip install -r requirements.txt
+RUN pip install -r base_requirements.txt
 
+RUN apt-get update && apt-get install -y emacs23-nox
