@@ -50,6 +50,8 @@ RUN R -e "install.packages(c('forcats', 'suncalc', 'ggimage', 'gggibbous', 'cale
 
 RUN apt-get update && apt-get install -y gettext-base && rm -rf /var/lib/apt/lists/*
 
+RUN R -e "install.packages(c('listviewer', 'shinyjs'), destdir='${RPACKLOC}')"
+RUN R -e "install.packages(c('shinybusy', 'shinyFiles', 'shinyalert' ), destdir='${RPACKLOC}')"
 #RUN R -e "install.packages(c('' ), destdir='${RPACKLOC}')"
 
 # Keep at the end:
